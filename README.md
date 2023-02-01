@@ -22,3 +22,21 @@
   - 해결 : persistence.xml의 경로를 jpa-practice/ 에서 jpa-practice/src/main/resources/META-INF/ 로 수정
 - 문제 : Member 객체를 찾지 못하는 에러 발생.
   - 해결 : 두 파일의 패키지를 jpa-practice/src/main/java/jpa/practice 로 이동
+
+## ch.03 영속성 관리
+- 엔티티의 생명주기는 비영속(new/transient), 영속(managed), 준영속(detached), 삭제(removed) 존재
+  - 비영속
+    - 엔티티 객체를 생성한 순간
+    - 영속성 컨텍스트, 데이터베이스와 아무 관련 없음
+    - new Object
+  - 영속
+    - 엔티티 매니저를 통해 영속성 컨텍스트에 저장
+    - 영속성 컨텍스트에 의해 관리 (영속성 컨텍스트의 1차 캐시에서 관리)
+    - persist(Object), find(), JPQL
+  - 준영속
+    - 영속성 컨텍스트가 관리하던 엔티티를 관리하지 않게 된 경우
+    - detach(Object), close(), clear()
+  - 삭제
+    - 영속성 컨텍스트와 데이터베이스에서 엔티티 삭제
+    - remove(Object)
+- 
