@@ -15,6 +15,10 @@ import java.util.Date;
 public class Member {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BOARD_SEQ_GENERATOR")
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @SequenceGenerator(name = "BOARD_SEQ_GENERATOR", allocationSize = 1)
     @Column(name = "ID")
     private String id;
 
