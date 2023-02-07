@@ -27,4 +27,9 @@ public class Member {
         this.id = id;
         this.username = username;
     }
+
+    public void setTeam(Team team) {
+        this.team = team;
+        team.getMembers().add(this);
+    }
 }
